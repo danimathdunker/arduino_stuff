@@ -51,8 +51,7 @@ void loop ()
     usDuration = getDist ();
     cm = usDuration / 58;  // int is enough for this
 #ifdef DEBUG
-    Serial.print   ("usDuration: ");
-    Serial.println (usDuration);
+    Serial.print   ("usDuration: "); Serial.println (usDuration);
 #endif
     if (cm < min_threshold)
     {
@@ -88,10 +87,7 @@ unsigned long getDist ()
     pinMode (usPin, INPUT);
     retVal = pulseIn (usPin, HIGH);
 #ifdef DEBUG
-    Serial.print   (retVal);
-    Serial.print   (", ");
-    Serial.print   (retVal / 58.0);
-    Serial.println (" cm");
+    Serial.print (retVal); Serial.print (", "); Serial.print (retVal / 58.0); Serial.println (" cm");
 #endif
     return (retVal);
 }
