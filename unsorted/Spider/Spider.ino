@@ -82,7 +82,7 @@ unsigned long getDist ()
     delayMicroseconds (2);
     digitalWrite (usPin, HIGH);
     delayMicroseconds (10);
-    digitalWrite (usPin, HIGH);
+    digitalWrite (usPin, LOW);
 
     pinMode (usPin, INPUT);
     retVal = pulseIn (usPin, HIGH);
