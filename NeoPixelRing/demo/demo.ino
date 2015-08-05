@@ -17,8 +17,8 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel (NUMLEDS, PIN, NEO_GRB + NEO_KHZ800)
 
 void setup ()
 {
-    Serial.begin (9600);
-    Serial.println ("setup start");
+//    Serial.begin (9600);
+//    Serial.println ("setup start");
     randomSeed (analogRead (0));
     pinMode (LED, OUTPUT);
     digitalWrite (LED, HIGH);
@@ -27,9 +27,6 @@ void setup ()
     strip.setBrightness (BRIGHT);
     strip.show (); // Initialize all pixels to 'off'
 
-    Serial.println ("expolsion");
-    explosion ();
-    Serial.println ("white");
     white ();
     redgreen ();
     wheel1 ();
@@ -52,7 +49,6 @@ void loop ()
     digitalWrite (LED, ledState);
     
     int func = random (NUMFUNCS);
-    Serial.print ("function # "); Serial.println (func);
     switch (func)
     {
         case 7:
