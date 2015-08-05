@@ -13,7 +13,7 @@ void explosion ()
 
     for (int i = 0;   i < numexp;   i++)
     {
-        Serial.print ("    explosion: round "); Serial.print (i); Serial.print ("/"); Serial.println (numexp);
+//        Serial.print ("    explosion: round "); Serial.print (i); Serial.print ("/"); Serial.println (numexp);
 /*
  *      1. two pixels upwards
  *      =====================
@@ -63,11 +63,9 @@ void explosion ()
 //                delay (1);
             }
         }
-        Serial.println ("    explosion: show ");
+        
         strip.show ();
-        Serial.println ("    explosion: delay ");
         delay (DELAYEXPLOSION);
-        Serial.println ("    explosion: clear ");
         for (int j = 0;   j < NUMLEDS;   j++)
         {
             strip.setPixelColor (j, 0, 0, 0);
