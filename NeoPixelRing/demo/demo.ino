@@ -1,3 +1,8 @@
+/*  demo.ino - demo sketch for a NeoPixel RGB LED ring
+ *
+ *  2014-07-12   Andreas Dunker   created
+ *
+ **********************************************************************/
 #include <Adafruit_NeoPixel.h>
 
 #define PIN        6
@@ -15,10 +20,16 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel (NUMLEDS, PIN, NEO_GRB + NEO_KHZ800)
 // and minimize distance between Arduino and first pixel.  Avoid connecting
 // on a live circuit...if you must, connect GND first.
 
+/* ################################################################## */
+
 void setup ()
 {
 //    Serial.begin (9600);
 //    Serial.println ("setup start");
+/*
+ *  1. inititialise things
+ *  ======================
+ */
     randomSeed (analogRead (0));
     pinMode (LED, OUTPUT);
     digitalWrite (LED, HIGH);
@@ -27,6 +38,10 @@ void setup ()
     strip.setBrightness (BRIGHT);
     strip.show (); // Initialize all pixels to 'off'
 
+/*
+ *  2. show all patterns
+ *  ====================
+ */
     white ();
     redgreen ();
     wheel1 ();
@@ -36,8 +51,14 @@ void setup ()
     randomwalk ();
 }
 
+/* ################################################################## */
+
 void loop ()
 {
+/*
+ *  1. toggle state LED
+ *  ===================
+ */
     if (ledState == HIGH)
     {
         ledState = LOW;
@@ -47,7 +68,10 @@ void loop ()
         ledState = HIGH;
     }
     digitalWrite (LED, ledState);
-    
+/*
+ *  2. choose function and call it
+ *  ==============================
+ */
     int func = random (NUMFUNCS);
     switch (func)
     {

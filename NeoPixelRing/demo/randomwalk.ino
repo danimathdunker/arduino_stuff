@@ -1,4 +1,4 @@
-/*  randomwalk - one pixals walks randomly
+/*  randomwalk - one pixel walks randomly
  *
  *  2014-07-15   Andreas Dunker   created
  *
@@ -18,7 +18,6 @@ void randomwalk ()
     pos      = random (NUMLEDS);
     hue      = random (360);
     hsb2rgb (hue, 255, 255, colours);
-    strip.setPixelColor (pos, colours [0], colours [1], colours [2]);
 
     for (int j = 0;   j < numsteps;   j++)
     {
@@ -37,6 +36,7 @@ void randomwalk ()
             hue -= DELTAHUE;
         if (hue >= 360) hue =   0;
         if (hue < 0)    hue = 359;
+
         hsb2rgb (hue, 255, 255, colours);
         strip.setPixelColor (pos, colours [0], colours [1], colours [2]);
         strip.show ();

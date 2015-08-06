@@ -1,10 +1,10 @@
-/*  wheel - colour wheel
+/*  wheel1 - colour wheel
  *
  *  2014-07-12   Andreas Dunker   created
  *
  **********************************************************************/
 
-#define DELAYWHHEL1 25
+#define DELAYWHEEL1 10000
 
 void wheel1 ()
 {
@@ -15,7 +15,7 @@ void wheel1 ()
         strip.setPixelColor (j, colours [0], colours [1], colours [2]);
     }
     strip.show ();
-    delay (10000);
+    delay (DELAYWHEEL1);
     for (int j = 0;   j < NUMLEDS;   j++)
     {
         strip.setPixelColor (j, 0, 0, 0);

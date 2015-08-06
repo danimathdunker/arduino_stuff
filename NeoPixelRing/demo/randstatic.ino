@@ -4,7 +4,7 @@
  *
  **********************************************************************/
 
-#define DELAYRANDSTATIC 25
+#define DELAYRANDSTATIC 5000
 
 void randstatic ()
 {
@@ -15,7 +15,7 @@ void randstatic ()
         strip.setPixelColor (j, colours [0], colours [1], colours [2]);
     }
     strip.show ();
-    delay (5000);
+    delay (DELAYRANDSTATIC);
     for (int j = 0;   j < NUMLEDS;   j++)
     {
         strip.setPixelColor (j, 0, 0, 0);

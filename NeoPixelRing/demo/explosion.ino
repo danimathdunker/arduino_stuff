@@ -2,6 +2,8 @@
  *
  *  2014-07-12   Andreas Dunker   created
  *
+ *  TODO: has to be revised
+ *
  **********************************************************************/
 
 #define DELAYEXPLOSION 100

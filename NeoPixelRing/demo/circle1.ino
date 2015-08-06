@@ -26,7 +26,7 @@ void circle1 ()
                 strip.setPixelColor (NUMLEDS-1, 0, 0, 0);
             }
 
-            hsb2rgb (j*6, 255, 255, colours);
+            hsb2rgb (j*6, 255, 255, colours); // WTF have I done here?
             strip.setPixelColor (j, colours [0], colours [1], colours [2]);
             strip.show ();
             delay (DELAYCIRCLE1);

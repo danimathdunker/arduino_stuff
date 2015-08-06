@@ -1,12 +1,18 @@
-/*  hsb2rgb - change HSB vakue into RGB
+/*  hsb2rgb - change HSB value into RGB
+ *
+ *  parameters: hue: in    : hue value (0 - 359)
+ *              sat:     in: saturation (0 - 255)
+ *              val:     in: lightness (0 - 255)
+ *              colors: out: array of RGB values
+ *              
  *
  *  from: http://log.liminastudio.com/itp/physical-computing/arduino-controlling-an-rgb-led-by-hue
+ *
+ ************************************************************************/
  */
 
 void hsb2rgb (int hue, int sat, int val, int colors [3])
 {
-    // hue: 0-259 (???), sat: 0-255, val (lightness): 0-255
-    // hue: 0-360, sat: 0-255, val (lightness): 0-255
     int r, g, b, base;
 
     if (sat == 0) { // Achromatic color (gray).
