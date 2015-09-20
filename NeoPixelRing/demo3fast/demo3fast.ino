@@ -17,21 +17,19 @@
 #define NUM_INNER  16
 #define NUM_MIDDL  24
 #define NUM_OUTER  32
-#define BRIGHT     70
-#define DELAY      25
-#define NUM_FUNCS   6
+#define BRIGHT     35
+
 #define CHIPSET    WS2812B
 #define COL_ORDER  GRB
 
+#define NUM_FUNCS   6
+
+
+
 const int NUM_LEDS = NUM_INNER + NUM_MIDDL + NUM_OUTER;
-CRGB leds[NUM_LEDS];
+CRGB leds [NUM_LEDS];
 
-
-// IMPORTANT: To reduce NeoPixel burnout risk, add 1000 uF capacitor across
-// pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
-// and minimize distance between Arduino and first pixel.  Avoid connecting
-// on a live circuit...if you must, connect GND first.
-
+/* ##################################################### setup */
 void setup ()
 {
 #ifdef DEBUG
@@ -40,43 +38,40 @@ void setup ()
     FastLED.addLeds<CHIPSET, DATA_PIN, COL_ORDER>(leds, NUM_LEDS);
     FastLED.setBrightness (BRIGHT);
 
+    randomSeed (analogRead (0));  // set random number generator
 
-    randomSeed (analogRead (0));
-
+    windmill ();
+    random2 ();
+    christmas ();
+    fill1 ();
+    fill2 ();
+    random1 ();
 }
 
+/* ###################################################### loop */
 void loop ()
 {
-/*    int func = random (NUMFUNCS);
+    int func = random (NUM_FUNCS);
     switch (func)
     {
         case 5:
-            glow ();
-            break;
-        case 4:
             windmill ();
             break;
-        case 3:
-            christmas ();
-            break;
-        case 2:
-            fill ();
-            break;
-        case 1:
+        case 4:
             random1 ();
             break;
-        case 0:
-            wheel1 ();
+        case 3:
+            random2 ();
             break;
-    } */
-    for(int dot = 0; dot < NUM_LEDS; dot++) { 
-            leds[dot] = CRGB::Green;
-            leds[NUM_LEDS - dot] = CRGB::Red;
-            FastLED.show();
-            // clear this led for the next time around the loop
-            leds[dot] = CRGB::Black;
-            leds[NUM_LEDS - dot] = CRGB::Black;
-            delay(30);
-        }
+        case 2:
+            fill1 ();
+            break;
+        case 1:
+            fill2 ();
+            break;
+        case 0:
+            christmas ();
+            break;
+    }
 }
 
