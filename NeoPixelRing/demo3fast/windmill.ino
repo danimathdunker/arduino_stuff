@@ -4,6 +4,8 @@
  *
  **********************************************************************/
 
+// TODO stop this flickering
+
 #define DELAYMILL 50
 
 int col = random (255);
@@ -39,11 +41,7 @@ void windmill ()
             FastLED.show ();
             delay (DELAYMILL);
 
-            for (byte pos = 0;   pos < NUM_LEDS;   pos++)
-            {
-                leds [pos] = CRGB::Black;
-            }
-            FastLED.show ();
+            clearall ();
         }
     }   // end for rounds
 }
