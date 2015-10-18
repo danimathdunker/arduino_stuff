@@ -5,12 +5,11 @@
  **********************************************************************/
 
 const int FILL1DELAY = 50;
-byte num1fills = random (10) + 5;
+byte fill1loops = random (5) + 5;
 
 void fill1 ()
 {
-    int colours [3];
-    for (byte j = 0;   j < num1fills;   j++)
+    for (byte j = 0;   j < fill1loops;   j++)
     {
         uint8_t hue = random (255);
         for (byte led = 0;   led < NUM_LEDS;   led++)

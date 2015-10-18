@@ -8,7 +8,6 @@
  *
  **********************************************************************/
 
-// #define DEBUG
 
 #include "FastLED.h"
 
@@ -17,12 +16,12 @@
 #define NUM_INNER  16
 #define NUM_MIDDL  24
 #define NUM_OUTER  32
-#define BRIGHT     35
+#define BRIGHT     30
 
 #define CHIPSET    WS2812B
 #define COL_ORDER  GRB
 
-#define NUM_FUNCS   6
+#define NUM_FUNCS   7
 
 
 
@@ -32,14 +31,14 @@ CRGB leds [NUM_LEDS];
 /* ##################################################### setup */
 void setup ()
 {
-#ifdef DEBUG
     Serial.begin (115200);
-#endif
+
     FastLED.addLeds<CHIPSET, DATA_PIN, COL_ORDER>(leds, NUM_LEDS);
     FastLED.setBrightness (BRIGHT);
 
     randomSeed (analogRead (0));  // set random number generator
 
+    inout1 ();
     windmill ();
     random2 ();
     christmas ();
@@ -54,6 +53,9 @@ void loop ()
     int func = random (NUM_FUNCS);
     switch (func)
     {
+        case 6:
+            inout1 ();
+            break;
         case 5:
             windmill ();
             break;
