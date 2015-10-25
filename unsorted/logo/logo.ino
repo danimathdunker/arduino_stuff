@@ -15,7 +15,7 @@ const int back_num   =  3;  // number of back LEDs
 const int min_blink =  10000;
 const int max_blink =  20000;
 const int dur_blink =     40;
-const int hue_change =  2000;
+const int hue_change =  1500;
 
 unsigned long eyes_old_millis = 0;
 unsigned long hue_old_millis = 0;
