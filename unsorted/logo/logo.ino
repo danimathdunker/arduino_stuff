@@ -38,8 +38,10 @@ void setup ()
  *  =============
  */
     eyes.begin ();
+    eyes.setBrightness (80);
     eyes.show ();
     back.begin ();
+    back.setBrightness (255);
     back.show ();
     randomSeed (analogRead (0));
     eyes_interval = random (min_blink, max_blink);
@@ -97,7 +99,8 @@ void loop ()
         eyes.setPixelColor (1, col [0], col [1], col [2]);
         eyes.show ();
         hue_old_millis = currentMillis;
-        if (++eyes_hue > 360) eyes_hue = 0;
+        eyes_hue++;
+        if (eyes_hue > 359) eyes_hue = 0;
     }
 /*
  *  1.2. blink
