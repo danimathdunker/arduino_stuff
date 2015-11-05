@@ -20,9 +20,9 @@ void setup ()
 void loop ()
 {
     digitalWrite (LEDPIN1, HIGH);
-    digitalWrite (LEDPIN2, HIGH);
+    digitalWrite (LEDPIN2, LOW);
     delay (DELAY1);
     digitalWrite (LEDPIN1, LOW);
-    digitalWrite (LEDPIN2, LOW);
+    digitalWrite (LEDPIN2, HIGH);
     delay (DELAY1);
 }
