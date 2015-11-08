@@ -1,6 +1,7 @@
 /*
  *  Taster
- *  Taster schaltet LED ein
+ *  Taster schaltet LED um.
+ *  interner Pullup - kein externer Widerstand benoetigt.
  *
  *  2015-11-05   Daniel LeMath    erzeugt
  *
@@ -15,7 +16,7 @@ byte oldval   = 0;
 void setup ()
 {
     pinMode (LEDPIN, OUTPUT);
-    pinMode (INPUTPIN, INPUT);
+    pinMode (INPUTPIN, INPUT_PULLUP);
 }
 
 void loop ()

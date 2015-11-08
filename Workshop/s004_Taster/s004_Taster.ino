@@ -1,8 +1,9 @@
 /*
- *  Taster
- *  Taster schaltet LED ein
+ *   Taster
+ *   Taster schaltet LED ein.
+ *   Externer Pullup-Widerstand von 10k benoetigt.
  *
- *  2015-11-05   Daniel LeMath    erzeugt
+ *   2015-11-05   Daniel LeMath    erzeugt
  *
  **********************************************************************/
 

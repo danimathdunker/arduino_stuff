@@ -21,7 +21,7 @@
 #define CHIPSET    WS2812B
 #define COL_ORDER  GRB
 
-#define NUM_FUNCS   7
+#define NUM_FUNCS   6
 
 
 
@@ -38,7 +38,7 @@ void setup ()
 
     randomSeed (analogRead (0));  // set random number generator
 
-    inout1 ();
+//    inout1 ();
     windmill ();
     random2 ();
     christmas ();
@@ -53,9 +53,9 @@ void loop ()
     int func = random (NUM_FUNCS);
     switch (func)
     {
-        case 6:
-            inout1 ();
-            break;
+//        case 6:
+//            inout1 ();
+//            break;
         case 5:
             windmill ();
             break;
