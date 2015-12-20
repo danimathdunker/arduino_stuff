@@ -18,7 +18,7 @@
 #define NUMOUTER  32
 #define BRIGHT    15
 #define DELAY     25
-#define NUMFUNCS   8
+#define NUMFUNCS   7
 
 const int NUMLEDS = NUMINNER + NUMMIDDL + NUMOUTER;
 Adafruit_NeoPixel strip = Adafruit_NeoPixel (NUMLEDS, PIN, NEO_GRB + NEO_KHZ800);
@@ -46,7 +46,6 @@ void setup ()
     blinkwhite ();
     blinkcol ();
     windmill ();
-    glow ();
     christmas ();
     fill ();
     random1 ();
@@ -58,14 +57,11 @@ void loop ()
     int func = random (NUMFUNCS);
     switch (func)
     {
-        case 7:
+        case 6:
             blinkwhite ();
             break;
-        case 6:
-            blinkcol ();
-            break;
         case 5:
-            glow ();
+            blinkcol ();
             break;
         case 4:
             windmill ();
