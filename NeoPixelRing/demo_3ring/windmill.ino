@@ -19,7 +19,7 @@ void windmill ()
         for (byte start = 0;   start < NUMOUTER / 2;   start++)
         {
            // col += random (10) + 10;
-           if (++col > 360) col = 0;
+           if (++col > 359) col = 0;
            hsb2rgb (col, 255, 255, colours);
             for (byte pos = 0;   pos < NUMOUTER / 4;   pos++)
             {

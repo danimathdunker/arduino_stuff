@@ -43,9 +43,9 @@ void setup ()
     strip.show (); // Initialize all pixels to 'off'
     randomSeed (analogRead (0));
 
+    windmill ();
     blinkwhite ();
     blinkcol ();
-    windmill ();
     christmas ();
     fill ();
     random1 ();
