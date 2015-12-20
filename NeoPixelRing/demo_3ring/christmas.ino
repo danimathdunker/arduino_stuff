@@ -8,7 +8,7 @@ const int CHRISTMASDELAY = 250;
 
 void christmas ()
 {
-    byte numblinks = random (20) + 20;
+    byte numblinks = random (15) + 15;
     for (byte blink = 0;   blink < numblinks;   blink++)
     {
         for (byte led = 0;   led < NUMLEDS;   led++)

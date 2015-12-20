@@ -16,7 +16,7 @@ void blinkcol ()
         greenStates [l] = 0;
         blueStates  [l] = 0;
     }
-    int numblinks = random (1000) + 1000;
+    int numblinks = random (2000) + 1000;
     for (int blinks = 0;   blinks < numblinks;   blinks++)
     {
         if (random (5) == 1)

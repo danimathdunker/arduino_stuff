@@ -13,5 +13,5 @@ void random1 ()
         strip.setPixelColor (j, colours [0], colours [1], colours [2]);
     }
     strip.show ();
-    delay (10000);
+    delay (7000);
 }

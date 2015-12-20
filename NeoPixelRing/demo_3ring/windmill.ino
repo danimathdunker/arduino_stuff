@@ -10,7 +10,7 @@ int col = random (360);
 
 void windmill ()
 {
-    int  numrounds = random (30) + 10;
+    int  numrounds = random (20) + 10;
     int  colours [3];
     byte ledpos_out, ledpos_mid, ledpos_inn;
 
