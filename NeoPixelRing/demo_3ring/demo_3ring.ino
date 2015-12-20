@@ -18,7 +18,7 @@
 #define NUMOUTER  32
 #define BRIGHT    15
 #define DELAY     25
-#define NUMFUNCS   6
+#define NUMFUNCS   8
 
 const int NUMLEDS = NUMINNER + NUMMIDDL + NUMOUTER;
 Adafruit_NeoPixel strip = Adafruit_NeoPixel (NUMLEDS, PIN, NEO_GRB + NEO_KHZ800);
@@ -27,6 +27,11 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel (NUMLEDS, PIN, NEO_GRB + NEO_KHZ800)
 // pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
 // and minimize distance between Arduino and first pixel.  Avoid connecting
 // on a live circuit...if you must, connect GND first.
+
+float redStates   [NUMLEDS];
+float blueStates  [NUMLEDS];
+float greenStates [NUMLEDS];
+float fadeRate = 0.96;
 
 void setup ()
 {
@@ -38,6 +43,8 @@ void setup ()
     strip.show (); // Initialize all pixels to 'off'
     randomSeed (analogRead (0));
 
+    blinkwhite ();
+    blinkcol ();
     windmill ();
     glow ();
     christmas ();
@@ -51,6 +58,12 @@ void loop ()
     int func = random (NUMFUNCS);
     switch (func)
     {
+        case 7:
+            blinkwhite ();
+            break;
+        case 6:
+            blinkcol ();
+            break;
         case 5:
             glow ();
             break;
