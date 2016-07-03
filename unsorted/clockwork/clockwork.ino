@@ -52,7 +52,7 @@ void setup ()
         Serial.println ("Couldn't find sensor!");
         while (1)
         {
-        	Blink_DP ();
+//        	Blink_DP ();
         	delay (1000);
         }
     }
