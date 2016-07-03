@@ -13,5 +13,5 @@ This folder contains sketches for the Adafruit/Watterott NeoPixel rings.
 A folder for small stuff.
 
 * _Spider_: The sketch for the Evil Spider; see http://dlm.asradu.eu/?tag=spider.
-* _clockwork_: [RGBDigit shield](https://www.rgbdigit.com/) with HDC1008 temperatur and humidity sensor.
+* _clockwork_: [RGBDigit shield](https://www.rgbdigit.com/) with [HDC1008](https://www.adafruit.com/products/2635) temperatur and humidity sensor.
 
