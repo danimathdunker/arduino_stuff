@@ -10,6 +10,7 @@ void show_humi ()
     int  humi_l   = 0;
     int  humidity = int (fHumidity + 0.5);
     int colours [3];
+    if (fHumidity > 99.9) humidity = 0;
 
     Serial.print (fHumidity); Serial.println ("%");
     
