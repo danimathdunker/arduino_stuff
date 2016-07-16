@@ -15,8 +15,9 @@
 RGBDigit rgbDigit (NDIGITS);       // uses default pin 12
 DS3231   Clock;
 
-const int PIN = 12;  // Sending neopixel data to Pin 12
-
+const int PIN    = 12;  // Sending neopixel data to Pin 12
+const int VPIN   =  7;  // switch LDR on/off
+const int LDRPIN = A1;  // read LDR
 bool Run_blink = 0;
 
 const byte FALSE = 0;
@@ -77,8 +78,15 @@ void loop ()
     	animate ();
     	read_clock ();
     	animation = FALSE;
+    	rgbDigit.showDot (0, 0, 0, 0);
+    	rgbDigit.showDot (3, random (100), random (100), random (100));
     }
-    if (((minutes == 15) || (minutes == 45)) && (! animation)) animation = TRUE;
+    if (((minutes == 15) || (minutes == 45)) && (! animation))
+    {
+    	animation = TRUE;
+    	rgbDigit.showDot (0, random (100), random (100), random (100));
+    	rgbDigit.showDot (3, 0, 0, 0);
+    }
     read_temp ();
     read_humi ();
     

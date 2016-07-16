@@ -33,4 +33,5 @@ void show_clock ()
     hsb2rgb (colour_minute, 255, 255, colours);
     rgbDigit.setDigit (min_h, 2, colours [0], colours [1], colours [2]);
     rgbDigit.setDigit (min_l, 3, colours [0], colours [1], colours [2]);
+    Blink_DP ();
 }
