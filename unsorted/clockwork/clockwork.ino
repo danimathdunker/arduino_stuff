@@ -69,7 +69,9 @@ void setup ()
 
 void loop ()
 {
-	delay (950);    // +/-1 second interval
+	int bright = 100;
+
+	delay (930);    // +/-1 second interval
     Serial.print ("Main loop "); Serial.println (millis ());
 
     read_clock ();
@@ -91,6 +93,12 @@ void loop ()
     read_humi ();
     
     Serial.print ("### ");Serial.print (hours); Serial.print (":"); Serial.print (minutes); Serial.print (":"); Serial.println (seconds);
+
+    digitalWrite (VPIN, HIGH);          // start measurement
+    delay (20);                         // let the LDR settle
+    bright = analogRead (LDRPIN);       // read value
+    digitalWrite (VPIN, LOW);           // stop measurement
+    rgbDigit.setBrightness (bright/4);  // set brightness
 
     if ((seconds < 6) || ((seconds > 30) && (seconds < 36)))
     {
