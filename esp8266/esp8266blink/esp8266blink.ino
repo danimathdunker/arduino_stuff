@@ -26,11 +26,9 @@ void setup ()
 // the loop function runs over and over again forever
 void loop ()
 {
-	Serial.print (ESP.getVcc ()); Serial.println (" mV");
-	Serial.println ("on");
+    Serial.print (ESP.getVcc ()); Serial.println (" mV");
     digitalWrite (pin, HIGH);     // turn the LED on (HIGH is the voltage level)
     delay (DELAY);               // wait for a second
-	Serial.println ("off");
     digitalWrite (pin, LOW);     // turn the LED off by making the voltage LOW
     delay (DELAY);               // wait for a second
 }

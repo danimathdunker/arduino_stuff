@@ -8,6 +8,12 @@ This folder contains sketches for the Adafruit/Watterott NeoPixel rings.
 * _demo3fast_: Three LED rings, controlled by the FastLED library.
 * _demo_3ring_: Three LED rings, controlled by the adafruit library.
 
+## ESP8266
+
+This folder contains sketches fo ESP8266
+
+* _esp8266blink_: Hello, World!
+
 ## unsorted
 
 A folder for small stuff.
