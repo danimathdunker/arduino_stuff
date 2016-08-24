@@ -13,6 +13,7 @@ This folder contains sketches for the Adafruit/Watterott NeoPixel rings.
 This folder contains sketches fo ESP8266
 
 * _esp8266blink_: Hello, World!
+* _esp8266hdc1000_: Temperature and Humidity
 
 ## unsorted
 
