@@ -36,7 +36,7 @@ const char* mqtt_server = "aaa.bbb.ccc.ddd";
 
 WiFiClient   espClient;
 PubSubClient client(espClient);
-long lastMsg = -100000; // millis of last message
+unsigned long lastMsg = -100000; // millis of last message
 char msg [256];
 int count_value = 0;  // counter for sent messages
 
@@ -115,7 +115,7 @@ void reconnect ()
  */
 void setup ()
 {
-    delay (5000);  // wait to be able to start serial console
+    delay (2000);  // wait to be able to start serial console
     pinMode (led, OUTPUT);
     Serial.begin (115200);
     Serial.println ("######################"); Serial.println ("Starting esp8266mqtt");
@@ -144,7 +144,7 @@ void loop ()
  *  if last message more than a minute ago, send another message
  *  ------------------------------------------------------------
  */
-    long now = millis();
+    unsigned long now = millis();
     if (now - lastMsg > 60000)
     {
         Serial.print ("lastMsg = "); Serial.print (lastMsg);

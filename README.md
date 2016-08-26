@@ -15,6 +15,7 @@ This folder contains sketches fo ESP8266
 * _esp8266blink_: Hello, World!
 * _esp8266hdc1000_: Temperature and Humidity
 * _exp8255mqtt_: sends MQTT messages
+* _exp8255sleep_: test for deep sleep
 
 ## unsorted
 

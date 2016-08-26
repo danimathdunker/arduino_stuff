@@ -13,3 +13,7 @@ Reading temperature and humidity from HDC1000/HDC1008
 ## esp8266mqtt
 
 Contacts an MQTT server and sends messages
+
+## esp8266sleep
+
+A test for the deep sleep mode
