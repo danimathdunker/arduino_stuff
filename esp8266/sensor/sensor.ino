@@ -113,9 +113,9 @@ void setup ()
     {
         mqtt_attempt++;
 #ifdef DEBUG
-    digitalWrite (LED, HIGH);
-    Serial.print (SENSOR_DESC);
-    Serial.print (": Attempting MQTT connection...");
+        digitalWrite (LED, HIGH);
+        Serial.print (SENSOR_DESC);
+        Serial.print (": Attempting MQTT connection...");
 #endif
         if (client.connect (SENSOR_DESC)) // try to connect
         {
