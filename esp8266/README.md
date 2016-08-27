@@ -17,3 +17,7 @@ Contacts an MQTT server and sends messages
 ## esp8266sleep
 
 A test for the deep sleep mode
+
+## sensor
+
+The complete code; reading temperature and humidity from HDC1000/HDC1008 and sending it to an MQTT broker.
