@@ -1,4 +1,6 @@
 /*  clockwork.ino - RGBdigit clock with HDC 1008 (temperature & humidity)
+ *  
+ *  IR stuff from original sketch
  *
  *  2016-06-15   Andreas Dunker   created
  *
@@ -9,6 +11,8 @@
 #include "Wire.h"                // Standard I2C
 #include <Adafruit_NeoPixel.h>   // controlling the Neopixels
 #include "Adafruit_HDC1000.h"    // temperature & humidity sensor with I2C
+#include <IRremote.h>            // for setting the clock
+#include <TimeLib.h>             //https://github.com/PaulStoffregen/Time
 
 #define NDIGITS 4
 
@@ -37,8 +41,26 @@ byte hours, minutes, seconds;
 
 byte animation = FALSE;
 
+//----------Neopixel settings---------------------------------------------
 Adafruit_NeoPixel strip = Adafruit_NeoPixel (32, PIN, NEO_GRB + NEO_KHZ800);
 Adafruit_HDC1000  hdc   = Adafruit_HDC1000 ();
+
+//----------IR settings---------------------------------------------
+int IR_VAL = 0;
+const int RECV_PIN = 10;
+IRrecv irrecv (RECV_PIN);
+decode_results results;
+
+#define POWER  0x10EFD827
+#define P      0x10EFD827
+#define A      0x10EFF807
+#define B      0x10EF7887
+#define C      0x10EF58A7
+#define UP     0x10EFA05F
+#define DOWN   0x10EF00FF
+#define LEFT   0x10EF10EF
+#define RIGHT  0x10EF807F
+#define SELECT 0x10EF20DF
 
 void setup ()
 {
